@@ -2,5 +2,5 @@ spring:
   application:
     name: servicio-productos
 
-  server:
-    port: 8001
+server:
+  port: 8001
