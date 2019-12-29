@@ -14,13 +14,20 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping(value = "/products", produces = MediaType.APPLICATION_JSON_VALUE)
-    public  @ResponseBody
+    public @ResponseBody
     Flux<Product> listar() {
-        return productService.findAll();
+        return productService.findAll().doOnNext(System.out::println);
     }
 
-    @GetMapping("/products/{id}")
-    public Mono<Product> detail(@PathVariable Long id) {
+    @GetMapping(value = "/products/{id}", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
+    public Mono<Product> detail(@PathVariable Long id) throws Exception {
+        try {
+            Thread.sleep(2000L);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
         return productService.findById(id);
     }
 
