@@ -32,6 +32,7 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok:1.18.10'
 	annotationProcessor 'org.projectlombok:lombok:1.18.10'
 	compile group: 'org.springframework.cloud', name: 'spring-cloud-starter-netflix-eureka-client', version: '2.2.1.RELEASE'
+	compile group: 'pe.com.producs.lenz', name: 'ervice-commons', version: '0.0.1-SNAPSHOT'
 }
 
 test {
